@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppinzq.dal.dao.ChatMapper">
+    <resultMap type="com.hoppinzq.dal.po.ChatPO" id="chatMap">
+        <id column="chat_id" property="chat_id"/>
+        <result column="chat_user_id" property="chat_user_id"/>
+        <result column="chat_createDate" property="chat_createDate"/>
+        <result column="chat_title" property="chat_title"/>
+        <result column="chat_answer" property="chat_answer"/>
+        <result column="chat_modal" property="chat_modal"/>
+        <result column="chat_state" property="chat_state"/>
+        <result column="chat_context" property="chat_context"/>
+        <result column="chat_system" property="chat_system"/>
+        <result column="chat_image" property="chat_image"/>
+        <collection property="chatMessageList" resultMap="chatMessageMap"></collection>
+    </resultMap>
+    <resultMap id="chatMessageMap" type="com.hoppinzq.dal.po.ChatMessagePO">
+        <id property="message_id" column="message_id"/>
+        <result column="message_createDate" property="message_createDate"/>
+        <result column="message" property="message"/>
+        <result column="reason_message" property="reason_message"/>
+        <result column="message_role" property="message_role"/>
+        <result column="message_index" property="message_index"/>
+        <result column="chat_id" property="chat_id"/>
+    </resultMap>
+
+    <select id="queryChat" parameterType="java.lang.String" resultMap="chatMap">
+        SELECT c.*, m.*
+        FROM chat c
+                 JOIN chatmessage m ON c.chat_id = m.chat_id
+        WHERE c.chat_user_id = #{chat_user_id}
+        ORDER BY m.message_index, m.message_role DESC, m.message_createDate DESC
+    </select>
+</mapper>

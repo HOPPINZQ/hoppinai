@@ -1,0 +1,8 @@
+zq-server:
+  name: hoppinzq-file
+  username: zhangqi
+  password: 123456
+  prefix: /service
+  ip: 175.178.115.82
+  center-addr: http://175.178.115.82:8801/service
+  #   center-addr: http://175.178.115.82:8801/service

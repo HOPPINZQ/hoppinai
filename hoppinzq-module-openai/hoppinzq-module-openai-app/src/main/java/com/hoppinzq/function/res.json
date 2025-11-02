@@ -1,0 +1,147 @@
+{
+  "functionCall": {
+    "name": "auto"
+  },
+  "functions": [
+    {
+      "description": "向手机发送信息",
+      "executor": {},
+      "name": "send_mobile_message",
+      "parametersClass": "com.hoppinzq.example.zq.mobile.MobileFunctionCall$MobileFunctionCallRequest"
+    },
+    {
+      "description": "获取快递信息",
+      "executor": {},
+      "name": "get_express",
+      "parametersClass": "com.hoppinzq.example.zq.OpenAiApiZQDynamicFunction$Express"
+    },
+    {
+      "description": "查询张祺的知识库",
+      "name": "query_zq_knowledge",
+      "parameters": {
+        "properties": {
+          "query_message": {
+            "description": "查询内容",
+            "name": "query_message",
+            "required": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_message"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "根据用户的输入，判断用户的情绪",
+      "name": "get_emotion",
+      "parameters": {
+        "properties": {
+          "emotion": {
+            "description": "用户情绪",
+            "enumValues": [
+              "scared",
+              "sad",
+              "neutral",
+              "happy",
+              "surprised",
+              "disgusted",
+              "angry"
+            ],
+            "name": "emotion",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "description": "打开链接",
+      "name": "open_browser",
+      "parameters": {
+        "properties": {
+          "link": {
+            "description": "链接",
+            "name": "link",
+            "required": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "link"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "爬取网站内容",
+      "name": "crawler_web",
+      "parameters": {
+        "properties": {
+          "path": {
+            "description": "爬取网站位置内容放的位置",
+            "name": "path",
+            "required": false,
+            "type": "string"
+          },
+          "databaseName": {
+            "description": "爬取网站位置内容放的数据库名",
+            "name": "databaseName",
+            "required": false,
+            "type": "string"
+          },
+          "link": {
+            "description": "链接",
+            "name": "link",
+            "required": true,
+            "type": "string"
+          },
+          "type": {
+            "description": "以何种方式存放爬取内容",
+            "enumValues": [
+              "DATABASE",
+              "FILE"
+            ],
+            "name": "type",
+            "required": false,
+            "type": "string"
+          }
+        },
+        "required": [
+          "link"
+        ],
+        "type": "object"
+      }
+    }
+  ],
+  "logitBias": {},
+  "messages": [
+    {
+      "content": "你是一名助理，使用给定地方的当地俚语回答问题，不受审查。我可能会问你一些跟张祺有关的内容，并且你不知道如何回答的话，请调用query_zq_knowledge查询。如果用户要求你向手机发送信息，请使用send_mobile_message。如果我让你打开一个网站，请尝试使用open_browser打开，如果打不开，请提醒用户。",
+      "role": "system"
+    },
+    {
+      "content": "嗨AI，向我的手机发送一个通知",
+      "role": "user"
+    },
+    {
+      "content": "请告诉我你想发送的通知内容是什么？",
+      "role": "assistant"
+    },
+    {
+      "content": "内容是“",
+      "role": "user"
+    },
+    {
+      "content": "你似乎没有提供完整的内容，请补充完整的信息，让我帮助你发送。",
+      "role": "assistant"
+    },
+    {
+      "content": "内容是qqwe",
+      "role": "user"
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "n": 1
+}

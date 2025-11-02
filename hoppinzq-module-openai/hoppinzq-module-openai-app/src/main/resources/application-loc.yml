@@ -1,0 +1,10 @@
+zq-server:
+  name: hoppinzq-chatgpt
+  username: zhangqi
+  password: 123456
+  prefix: /service
+  ip: 127.0.0.1
+  center-addr: http://127.0.0.1:8801/service
+  file-addr: http://127.0.0.1:8090/service
+auth:
+  ssoUrl: http://127.0.0.1:8812/service

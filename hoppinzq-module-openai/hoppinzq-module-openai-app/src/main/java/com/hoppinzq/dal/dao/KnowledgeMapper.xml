@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppinzq.dal.dao.KnowledgeMapper">
+    <resultMap type="com.hoppinzq.dal.po.KnowledgePO" id="knowledgeMap">
+        <id column="id" property="id"/>
+        <result column="knowledge_name" property="knowledge_name"/>
+        <result column="knowledge_creator" property="knowledge_creator"/>
+        <result column="knowledge_date" property="knowledge_date"/>
+        <collection property="knowledgeAttrList" resultMap="knowledgeAttrMap"></collection>
+    </resultMap>
+    <resultMap id="knowledgeAttrMap" type="com.hoppinzq.dal.po.KnowledgeAttrPO">
+        <id property="knowledge_attr_id" column="knowledge_attr_id"/>
+        <result column="knowledge_attr_knowledge_id" property="knowledge_attr_knowledge_id"/>
+        <result column="knowledge_attr_name" property="knowledge_attr_name"/>
+        <result column="knowledge_attr_key" property="knowledge_attr_key"/>
+        <result column="knowledge_attr_creator" property="knowledge_attr_creator"/>
+        <result column="knowledge_attr_date" property="knowledge_attr_date"/>
+        <collection property="knowledgeAttrLabelList" resultMap="knowledgeAttrLabelMap"></collection>
+    </resultMap>
+    <resultMap id="knowledgeAttrLabelMap" type="com.hoppinzq.dal.po.KnowledgeAttrLabelPO">
+        <id property="knowledge_attr_label_id" column="knowledge_attr_label_id"/>
+        <result column="attr_id" property="attr_id"/>
+        <result column="knowledge_attr_label_name" property="knowledge_attr_label_name"/>
+    </resultMap>
+
+    <select id="queryKnowledge" parameterType="java.lang.String" resultMap="knowledgeMap">
+        SELECT *
+        FROM knowledge k
+                 LEFT JOIN knowledge_attr ka ON k.id = ka.knowledge_id
+                 LEFT JOIN knowledge_attr_label kal ON ka.knowledge_attr_id = kal.attr_id
+        WHERE k.id = #{knowledge_id}
+    </select>
+</mapper>

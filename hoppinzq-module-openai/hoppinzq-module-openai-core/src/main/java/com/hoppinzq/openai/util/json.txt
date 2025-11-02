@@ -1,0 +1,14 @@
+1、这是你提取的json数据{"a":"acv","dd":"qwe"}希望对你有帮助
+2、这是未闭合的JSON{"a":{"b":[1,2,
+3、这是多余json{{"name":"zhangsan"}}
+4、这是单引号json{'a':1,"v":"qwe"}
+5、遗漏,json{"name":"zhangsan""v":"qwe"}
+6、多余,json{"name":"zhangsan","v":"qwe",}
+7、markdown的json```json {"name":"zhangsan","v":"qwe"}```
+8、用=代替冒号的json{"name"="zhangsan","v"="qwe"}
+9、丢失冒号的json{"name" "zhangsan","v" "qwe"}
+10、未加引号的json{"name":zhangsan,"v":1}
+11、中文符号的json{“name”：“张三”}
+12、带注释的json{“name”：“张三”//这是name}
+13、值缺失[1,2,,3]
+14、带有未转义的控制字符的json{"name":"zhangsan","v":"qwe\n"}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hoppinzq.dal.dao.PublicMCPTypeMapper">
+    <resultMap type="com.hoppinzq.dal.po.PublicMCPTypePO" id="mcpMap">
+        <id column="id" property="id"/>
+        <result column="type_name" property="typeName"/>
+        <result column="type_description" property="typeDescription"/>
+        <collection property="publicMCPPOList" resultMap="publicMCPMap"></collection>
+    </resultMap>
+    <resultMap id="publicMCPMap" type="com.hoppinzq.dal.po.PublicMCPPO">
+        <id property="mcp_id" column="mcp_id"/>
+        <result column="description" property="description"/>
+        <result column="name" property="name"/>
+        <result column="url" property="url"/>
+        <result column="remark" property="remark"/>
+        <result column="is_office" property="is_office"/>
+        <result column="type_id" property="type_id"/>
+    </resultMap>
+
+    <select id="queryMCP" parameterType="java.lang.String" resultMap="mcpMap">
+        SELECT c.*, m.*
+        FROM public_mcp_type c
+                 LEFT JOIN public_mcp m ON c.id = m.type_id
+    </select>
+</mapper>

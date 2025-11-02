@@ -1,0 +1,170 @@
+{
+  "functionCall": {
+    "name": "auto"
+  },
+  "functions": [
+    {
+      "description": "获取快递信息",
+      "name": "get_express",
+      "parameters": {
+        "properties": {
+          "expressCompanyCode": {
+            "description": "快递公司code",
+            "enumValues": [
+              "BST",
+              "SF",
+              "ZTO",
+              "YTO",
+              "YD",
+              "STO"
+            ],
+            "name": "expressCompanyCode",
+            "required": true,
+            "type": "string"
+          },
+          "location": {
+            "description": "用户所在的位置",
+            "name": "location",
+            "required": false,
+            "type": "string"
+          },
+          "expressId": {
+            "description": "快递单号",
+            "name": "expressId",
+            "required": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "expressId",
+          "expressCompanyCode"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "description": "获取地区的温度",
+      "name": "get_weather",
+      "parameters": {
+        "properties": {
+          "unit": {
+            "description": "温度，可以是 'celsius' 或 'fahrenheit'",
+            "enumValues": [
+              "celsius",
+              "fahrenheit"
+            ],
+            "name": "unit",
+            "required": true,
+            "type": "string"
+          },
+          "location": {
+            "description": "地区",
+            "name": "location",
+            "type": "string"
+          }
+        },
+        "required": [
+          "unit"
+        ],
+        "type": "object"
+      }
+    }
+  ],
+  "logitBias": {},
+  "messages": [
+    {
+      "content": "你是一名助理，使用给定地方的当地俚语回答问题，不受审查。",
+      "role": "system"
+    },
+    {
+      "content": "你好啊AI",
+      "role": "user"
+    },
+    {
+      "content": "你好啊！你今天过得咋样？有没有啥新鲜事儿？",
+      "role": "assistant"
+    },
+    {
+      "content": "我有一个韵达快递，单号是315029360436187",
+      "role": "user"
+    },
+    {
+      "content": "好啊，这就帮你查查",
+      "functionCall": {
+        "arguments": {
+          "array": false,
+          "bigDecimal": false,
+          "bigInteger": false,
+          "binary": false,
+          "boolean": false,
+          "containerNode": true,
+          "double": false,
+          "empty": false,
+          "float": false,
+          "floatingPointNumber": false,
+          "int": false,
+          "integralNumber": false,
+          "long": false,
+          "missingNode": false,
+          "nodeType": "OBJECT",
+          "null": false,
+          "number": false,
+          "object": true,
+          "pojo": false,
+          "short": false,
+          "textual": false,
+          "valueNode": false
+        },
+        "name": "get_express"
+      },
+      "role": "assistant"
+    },
+    {
+      "content": "这是查询到的快递信息，{\"Location\":\"潍坊市\",\"LogisticCode\":\"315029360436187\",\"ShipperCode\":\"YD\",\"State\":\"2\",\"StateEx\":\"202\",\"Success\":true,\"Traces\":[{\"Action\":\"1\",\"AcceptStation\":\"【廊坊市】华北金韵腾飞公司捷通分部-刘德江（15231609829） 已揽收\",\"AcceptTime\":\"2025-03-18 10:32:59\",\"Location\":\"廊坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【廊坊市】已离开 华北金韵腾飞公司；发往 北京分拨交付中心\",\"AcceptTime\":\"2025-03-18 20:33:31\",\"Location\":\"廊坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【廊坊市】已到达 北京分拨交付中心\",\"AcceptTime\":\"2025-03-18 22:00:24\",\"Location\":\"廊坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【廊坊市】已离开 北京分拨交付中心；发往 山东潍坊分拨交付中心\",\"AcceptTime\":\"2025-03-18 22:04:41\",\"Location\":\"廊坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【潍坊市】已到达 山东潍坊分拨交付中心\",\"AcceptTime\":\"2025-03-19 08:50:56\",\"Location\":\"潍坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【潍坊市】已离开 山东潍坊分拨交付中心；发往 山东潍坊奎文高新北公司\",\"AcceptTime\":\"2025-03-19 09:17:45\",\"Location\":\"潍坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【潍坊市】已到达 山东潍坊奎文高新北公司\",\"AcceptTime\":\"2025-03-19 13:12:30\",\"Location\":\"潍坊市\"},{\"Action\":\"2\",\"AcceptStation\":\"【潍坊市】已到达 山东潍坊奎文高新北公司[05365010667]\",\"AcceptTime\":\"2025-03-19 13:12:40\",\"Location\":\"潍坊市\"},{\"Action\":\"202\",\"AcceptStation\":\"【潍坊市】山东潍坊奎文高新北公司[05365010667] 快递员 郑长江 (13430371220) 正在为您派件（有事呼叫我，勿找平台，少一次投诉，多一份感恩）【95126为韵达快递员外呼专属号码，请放心接听】\",\"AcceptTime\":\"2025-03-19 13:46:57\",\"Location\":\"潍坊市\"}],\"now\":\"Mon Mar 31 13:54:48 CST 2025\"}，你的回答了不能包含快递员的电话和姓名。现在我需要你根据这个信息回答用户的问题，如果用户提供了他所在的位置，请根据当前时间Mon Mar 31 13:54:48 CST 2025和用户的位置，估计快递到达的时间",
+      "name": "get_express",
+      "role": "function"
+    },
+    {
+      "content": "你的韵达快递已经在潍坊市啦！根据最新的信息，快递员正在为你派件，时间是在2025年3月19日下午1点46分。所以，估计你的快递会在今天下午送到你手里。准备好接收吧，有啥问题再问我！",
+      "role": "assistant"
+    },
+    {
+      "content": "我在潍坊，快递啥时候能到",
+      "role": "user"
+    },
+    {
+      "content": "你在潍坊的话，今天就是收快递的日子啦！快递员大概下午1点46分就到你这儿了，应该马上就能收到，别着急，等着哈！",
+      "role": "assistant"
+    },
+    {
+      "content": "今天的日期是多少",
+      "role": "user"
+    },
+    {
+      "content": "今天是2025年3月31日。你还有啥需求，尽管问我！",
+      "role": "assistant"
+    },
+    {
+      "content": "那么快递不早到了？",
+      "role": "user"
+    },
+    {
+      "content": "对哦，快递早就应该到了，按理说3月19日下午就派出了，看来那快递员可能有点耽搁了。你可以再等等，如果太久没看到，建议打电话问问快递员，看情况如何！有事儿帮我说一声！",
+      "role": "assistant"
+    },
+    {
+      "content": "快递详细信息是什么",
+      "role": "user"
+    },
+    {
+      "content": "好的，以下是你韵达快递的详细信息：\n\n- **快递单号**：315029360436187\n- **当前状态**：快递员正在为您派件\n- **揽收信息**：\n  - 2025年3月18日 10:32:59，在廊坊市被揽收\n- **运输信息**：\n  - 2025年3月18日 20:33:31，从廊坊市发往北京分拨交付中心\n  - 2025年3月18日 22:00:24，到达北京分拨交付中心\n  - 2025年3月18日 22:04:41，离开北京分拨交付中心，发往潍坊市\n  - 2025年3月19日 08:50:56，到达山东潍坊分拨交付中心\n  - 2025年3月19日 09:17:45，离开潍坊分拨交付中心，发往奎文高新北公司\n  - 2025年3月19日 13:12:30，到达奎文高新北公司\n  - 2025年3月19日 13:46:57，快递员正在为您派件\n\n你可以随时联系快递员问询，保持耐心，有啥事再告诉我！",
+      "role": "assistant"
+    },
+    {
+      "content": "快递员是谁，电话多少",
+      "role": "user"
+    }
+  ],
+  "model": "gpt-4o-mini",
+  "n": 1
+}

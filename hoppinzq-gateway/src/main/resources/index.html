@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://hoppinzq.com/static/images/favicon.ico">
+    <link rel="stylesheet" href="https://hoppinzq.com/spider/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://hoppinzq.com/static/css/plugins/lightbox.css">
+    <link rel="stylesheet" href="https://hoppinzq.com/spider/css/LineIcons.3.0.css">
+    <link rel="stylesheet" href="https://hoppinzq.com/spider/css/simple-bar.css">
+    <link rel="stylesheet" href="https://hoppinzq.com/spider/css/footer.css">
+    <link rel="stylesheet" href="https://hoppinzq.com/spider/css/main.css">
+    <link rel="stylesheet" href="https://hoppinzq.com/user/zhangqi3qw/zTree/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" href="https://hoppinzq.com/user/zhangqi3qw/zTree/zTreeStyle/animate.css" type="text/css">
+
+</head>
+<style>
+    div:focus, div:active, button:focus, button:active, a:focus, a:active {
+        outline: none;
+    }
+
+    body, div {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    section, .doc-main-wrapper {
+        outline: 1px solid transparent;
+    }
+
+    .footer-menu-items {
+        margin: 2px 0px;
+    }
+
+    .ztree ul li:before {
+        left: -173px;
+    }
+
+    .ztree > li > p ~ ul > li > p ~ ul > li > p ~ ul > li > p ~ ul > li > p {
+        background: #378639;
+    }
+
+    .explanations .single-explanation h4 {
+        word-break: break-all;
+    }
+
+    .type-btn {
+        color: #fff;
+        position: absolute;
+        top: 22px;
+        right: 12px;
+        border: 1px solid #eee;
+        background: #61b864;
+        border-radius: 5px;
+        font-size: 12px;
+        padding: 7px 16px;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .zwagger {
+        padding: 2em 0;
+        background: #fff;
+    }
+
+    .zwagger-service .zwagger-method {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0 0 15px 10px;
+    }
+
+    .zwagger-service .zwagger-method-header {
+        padding: 0;
+        border-radius: 30px;
+    }
+
+    .zwagger-service .panel-title a {
+        display: block;
+        padding: 12px 20px 12px 50px;
+        background: #4fab45;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        border: 1px solid transparent;
+        border-radius: 30px;
+        position: relative;
+        transition: all 0.3s ease 0s;
+    }
+
+    .zwagger-service .panel-title a.collapsed {
+        background: #fff;
+        color: #0d345d;
+        border: 1px solid #ddd;
+    }
+
+    .zwagger-service .panel-title a:after,
+    .zwagger-service .panel-title a.collapsed:after {
+        content: "\f107";
+        font-family: fontawesome;
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+        border-radius: 50%;
+        background: #4cc251;
+        font-size: 25px;
+        color: #fff;
+        text-align: center;
+        border: 1px solid transparent;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.58);
+        position: absolute;
+        top: -5px;
+        left: -20px;
+        transition: all 0.3s ease 0s;
+    }
+
+    .zwagger-service .panel-title a.collapsed:after {
+        content: "\f105";
+        background: #fff;
+        color: #0d345d;
+        border: 1px solid #ddd;
+        box-shadow: none;
+    }
+
+    .zwagger-service .panel-body {
+        padding: 20px 25px 10px 9px;
+        background: transparent;
+        font-size: 14px;
+        color: #8c8c8c;
+        line-height: 25px;
+        border-top: none;
+        position: relative;
+    }
+
+    .zwagger-service .panel-body p {
+        padding-left: 25px;
+        border-left: 1px dashed #8c8c8c;
+    }
+
+    .zwagger-service .panel-title .method-title {
+        float: right;
+        margin-right: 5%;
+    }
+
+    .zwagger-service-hide {
+        float: right;
+        margin-right: 5%;
+        cursor: pointer;
+    }
+
+    .zwagger-param-hide {
+        float: right;
+        margin-right: 5%;
+        cursor: pointer;
+    }
+
+    .zwagger-extra-hide {
+        float: right;
+        margin-right: 5%;
+        cursor: pointer;
+    }
+
+    .zwagger-service .zwagger-form {
+        margin-top: 10px;
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    input[type=checkbox] {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .table-params {
+        border-bottom: 1px solid #000;
+        margin-bottom: 5px;
+    }
+
+    .zwagger-api {
+        margin-left: 5%;
+    }
+
+    .explanations .single-explanation.POST {
+        border: 1px #49cc90 solid;
+        background: rgba(73, 204, 144, .1);
+    }
+    .explanations .single-explanation.GET {
+        border: 1px #61affe solid;
+        background: rgba(97,175,254,.1);
+    }
+    .explanations .single-explanation.ALL {
+        border-style: solid;
+        border-width: 1px;
+        border-image: linear-gradient(to bottom, #10d631, #61affe) 0.8;
+        border-image-slice: 1;
+        background: linear-gradient(90deg, #49CC9019, #61AFFE19);
+    }
+    .explanations .single-explanation.POST h4 {
+        background: linear-gradient(90deg, #61b864, #10d631);
+    }
+    .explanations .single-explanation.GET h4 {
+        background: linear-gradient(90deg, #619ab8, #61affe);
+    }
+</style>
+<style>
+    .explanations .single-explanation {
+        border: 1px #49cc90 solid;
+        background: rgba(73, 204, 144, .1);
+        padding: 15px 0 0 15px !important;
+    }
+
+    .page-header {
+        margin: 10px 0 20px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .invoice-details {
+        background-color: #f3f6f9;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+    }
+
+    .invoice-details {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .no-margin {
+        margin: 0 !important;
+    }
+
+    .table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th {
+        border: 1px solid #d1d3e0;
+    }
+
+    .table > tbody > tr > th, .table > tbody > tr td {
+        border-bottom: 0 solid #f3f6f9;
+    }
+
+    .table > tbody > tr > td, .table > tbody > tr > th {
+        border-top: 1px solid #f3f6f9;
+        padding: 1rem;
+        vertical-align: middle;
+    }
+
+    .total-payment h3 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 1px solid #ccc;
+        display: inline-block;
+        margin-top: 0;
+    }
+
+    .no-print {
+        margin: 15px 10px;
+    }
+
+    .text-right {
+        text-align: right !important;
+    }
+
+    .doc-main-wrapper {
+        padding: 0 !important;
+        padding-right: 0;
+    }
+</style>
+<body class="position-relative" data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
+
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="testModal" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal_position">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">敬请期待</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <h6 style="margin: 5px 0;">何为HOPPIN的WEB托管网站？他能做什么？</h6>
+                    <p>借助于 http://hoppin.cn 和 https://hoppinzq.com 两个域名,你可以将自己的网页直接托管到我的这两个域名下；
+                        无须购买服务器、购买DNS解析和申请SSL证书；
+                        可以使用hoppinzq.com自带的CDN提高你的网页加载速度；
+                        可以使用我的网站的seo优化，将你的网页快速的被百度等搜索引擎收录；
+                    </p>
+                    <p>
+                        要做到上面几点，你需要将你的网页通过接口上传到我的服务器上，然后选择java或者node作为后台（关于为什么没有Nginx，我想有必要说明:因为我需要对你的网页进行有效的管控和统计，并收集必要的信息）。
+                        其他资源文件上传到我的cdn并通过接口更新目录和刷新内容。然后就可以通过
+                        接口返回的地址访问你的页面了。</p>
+                    <h6 style="margin: 5px 0;">现已支持unity的WebGL和手游托管！！！</h6>
+                    <p>
+                        在线尝试我做的unity游戏demo，带宽有限，因此加载速度缓慢。但是缓存做的好，一次加载，终身受益！微信移动端就不要点了，因为unity的webGL会造成微信的崩溃，但这并不是我的错。</p>
+                    <p><a class="ticket" target="_blank" href="http://hoppin.cn/web/unity/yqcr/gameIndex.html">元气超人（基于Cocos）</a>
+                    </p>
+                    <p><a class="ticket" target="_blank" href="http://hoppin.cn/web/unity/2dxiaohuli/index.html">2D小狐狸Demo</a>
+                    </p>
+                    <p><a class="ticket" target="_blank" href="http://hoppin.cn/web/unity/mimixingdong/index.html">秘密行动Demo</a>
+                    </p>
+                    <p><a class="ticket" target="_blank"
+                          href="http://hoppin.cn/web/unity/xibudemo/index.html">西部Demo</a></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="$('#testModal').modal('hide');"
+                        data-dismiss="modal">太棒了！我很期待！
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="header navbar-area others-pages">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="nav-inner">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="">
+                            <img src="https://hoppinzq.com/static/images/logo/1640338711_113639.png" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a href="index.html" class="active" aria-label="Toggle navigation">文档</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://gitee.com/hoppin/hoppinzq-gateway"
+                                       aria-label="Toggle navigation">开源地址</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a onclick="$('#testModal').modal('show');"
+                                       aria-label="Toggle navigation" style="cursor: pointer">HOPPIN的WEB托管</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="button">
+                            <a data-toggle="modal" onclick="$('#testModal').modal('show');" data-target="#testModal"
+                               class="btn">加入HOPPIN的WEB托管 <i class="lni lni-circle-plus"></i></a>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <button class="menu-button menu-open">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="doc_overlay"></div>
+    <div class="container doc_container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12">
+                <aside data-simplebar="" class="doc-sidebar">
+                    <button class="menu-button menu-close">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <nav class="sidenav" id="navbar-example2">
+                        <ul class="nav flex-column zwagger-api-ul"></ul>
+                    </nav>
+                </aside>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-12">
+                <section class="main-section" tabindex="0">
+                    <div class="welcome mb-10">
+                        <h1 class="mb-30">
+                            欢迎您使用 <span class="template-name">zq网关</span> ，下面是使用文档
+                        </h1>
+                        <div class="author-info">
+                            <img src="http://150.158.28.40:9000/e3f22651f73e46979d9461f38cb2ab0a.jpg" alt="#">
+                            <div>
+                                <p class="name">zhangqi</p>
+                                <span>2022/08/02</span>
+                            </div>
+                        </div>
+                        <p class="mb-10">
+                            该项目已被git托管，你可以直接<a href="https://gitee.com/hoppin/hoppinzq-gateway"
+                                               class="ticket" target="_blank">在gitee上拉取该项目</a>。另外，该网页已被hoppin的网页
+                            托管服务所托管，具体信息<a class="ticket" style="cursor: pointer"
+                                           onclick="$('#testModal').modal('show');">点我</a>
+                        </p>
+                        <p class="mb-10">
+                            下面简单介绍一下该项目，具体内容和细节可以访问git里的<a class="ticket" target="_blank"
+                                                           href="https://gitee.com/hoppin/hoppinzq-gateway/blob/master/README.md">readme</a>
+                        </p>
+                        <div class="doc-title pt-30" id="origin">
+                            <h2>起源</h2>
+                        </div>
+                        <div class="box">
+                            <p class="mb-10">
+                                在逛开源社区的时候看到一篇<a class="ticket" target="_blank"
+                                                href="https://my.oschina.net/muyuxi/blog/1609477">博客</a> (现在已经没了)，
+                                内容是关于api中间件的架构思想。当时我觉得这个思想很独特，刚好作者留下了一个<a class="ticket" target="_blank"
+                                                                          href="https://gitee.com/hoppin/apitest">开源地址</a>
+                                ，
+                                并实现了部分内容，之后的内容就由我来补充和拓展。由于之前写了一套rpc框架，
+                                加上这套网关中间件，急需一个项目来检验其可行性和健壮性，
+                                就写了一个<a class="ticket" target="_blank"
+                                        href="https://gitee.com/hoppin/hoppinzq">博客项目</a>
+                                并在那个项目里继续完善和添加功能并修补bug，就都提交在博客项目里了。
+                                今天就把部分功能剥离出来，作为一个新的开源项目。
+                            </p>
+                        </div>
+                        <button id="btn-oauth">认证服务接口</button>
+                    </div>
+                    <div class="doc-main-wrapper api-doc"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-12">
+                <div class="footer-content">
+                    <div class="logo">
+                        <a href="javascript:void(0)">
+                            <img src="https://hoppinzq.com/static/images/logo/1640338711_113639.png" alt="logo">
+                        </a>
+                    </div>
+                    <p>如果觉得该文档很有帮助，可通过以下方式联系我！Enjoy coding！</p>
+                    <ul class="social">
+                        <li><a href="https://gitee.com/hoppin"><i class="lni lni-github-original"></i></a></li>
+                        <li><a href="javascript:void(0)" onclick="alert('微信号：zhangqiff19')" title="zhangqiff19"><i
+                                class="lni lni-wechat"></i></a></li>
+                        <li><a href="tel:15028582175"><i class="lni lni-phone"></i></a></li>
+                        <li><a href="mailto:anmiezata@163.com"><i class="lni lni-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p><a target="_blank" href="https://beian.miit.gov.cn/">Copyright © HOPPINZQ.
+                        ICP主体备案号:鲁ICP备2021023310号</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+</a>
+<script src="https://hoppinzq.com/spider/js/jquery.min.js"></script>
+<script src="https://hoppinzq.com/spider/js/popper.min.js"></script>
+<script src="https://hoppinzq.com/spider/js/bootstrap.min.js"></script>
+<script src="https://hoppinzq.com/spider/js/simple-bar.js"></script>
+<script src="https://hoppinzq.com/static/js/plugins/lightbox-2.6.min.js"></script>
+<script src="https://hoppinzq.com/static/js/vendor/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://hoppinzq.com/user/zhangqi3qw/zTree/js/jquery.ztree.core.js"></script>
+<script src="https://hoppinzq.com/user/zhangqi3qw/zTree/js/jquery.ztree.excheck.js"></script>
+<script src="https://hoppinzq.com/user/zhangqi3qw/jquery-ui.min.js"></script>
+<script src="https://hoppinzq.com/api/static/js/zjax.js"></script>
+<script>
+
+    const menuButtonOpen = document.querySelector(".menu-open");
+    const menuButtonClose = document.querySelector(".menu-close");
+    const sidebar = document.querySelector(".doc-sidebar");
+    const docOverlay = document.querySelector(".doc_overlay");
+
+    menuButtonOpen.addEventListener("click", () => {
+        sidebar.classList.add("show");
+        docOverlay.classList.add('open');
+    });
+    menuButtonClose.addEventListener("click", () => {
+        sidebar.classList.remove("show");
+        docOverlay.classList.remove('open');
+    });
+    docOverlay.addEventListener("click", () => {
+        sidebar.classList.remove("show");
+        docOverlay.classList.remove('open');
+    });
+
+    const copyButton = document.querySelectorAll('.copy-btn');
+    copyButton.forEach(element => {
+        element.addEventListener('click', (e) => {
+            $(copyButton).each(function (index, elem) {
+                $(elem).text("复制");
+            });
+            const elem = e.target.parentElement.children[1].innerText;
+            const el = document.createElement('textarea');
+            el.value = elem;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand("copy");
+            $(element).text("复制成功！");
+
+            document.body.removeChild(el)
+        })
+    });
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    $(function () {
+        $.fn.append2 = function (html, callback) {
+            let originalHtmlLength = $("body").html().length;
+            this.append(html);
+            let nums = 1;
+            let timer1 = setInterval(function () {
+                nums++;
+                let clearIntervalfun = function () {
+                    clearInterval(timer1)
+                    callback();
+                }
+                let flag = originalHtmlLength != $("body").html().length || nums > 1000;
+                flag && clearIntervalfun()
+            }, 1)
+        };
+        $.fn.prepend2 = function (html, callback) {
+            let originalHtmlLength = $("body").html().length;
+            this.prepend(html);
+            let nums = 1;
+            let timer1 = setInterval(function () {
+                nums++;
+                let clearIntervalfun = function () {
+                    clearInterval(timer1)
+                    callback();
+                }
+                let flag = originalHtmlLength != $("body").html().length || nums > 1000;
+                flag && clearIntervalfun()
+            }, 1)
+        };
+        window.setTimeout(fadeout, 500);
+        $(".img-light").on("click", function () {
+            let $img = $(this).find("img")[0];
+            $(".lb-outerContainer").width($img.width * 2).height($img.height);
+            $("#lightbox").css("position", "fixed");
+            $("#lightbox").css("top", "400px !important");//先写死
+        });
+        window.onscroll = function () {
+            let backToTo = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                backToTo.style.display = "flex";
+            } else {
+                backToTo.style.display = "none";
+            }
+        };
+        let navbarToggle = document.querySelector(".mobile-menu-btn");
+        navbarToggle.addEventListener('click', function () {
+            navbarToggle.classList.toggle("active");
+        });
+        $("#btn-oauth").click(function () {
+            $.zjax({
+                url: `http://127.0.0.1:8812/service/hoppinzq`,
+                zqMethod:"api",
+                zqIgnore: true,
+                success:function (res) {
+                    let _res = JSON.parse(res);
+                    let apis = _res.data;
+                    renderZwagger(apis);
+                }
+            })
+        })
+        $.zjax({
+            url: `http://127.0.0.1:8099/service/hoppinzq`,
+            zqMethod:"api",
+            zqIgnore: true,
+            success:function (res) {
+                let _res = JSON.parse(res);
+                let apis = _res.data;
+                renderZwagger(apis);
+            }
+        })
+    })
+
+    function renderZwagger(apis){
+        $(".zwagger-api-ul").html("");
+        $(".api-doc").html("");
+        $.each(apis, function (index, api) {
+            $(".zwagger-api-ul").append2(`<li class="api-title-${index}"><h6><i class="lni lni-grid-alt"></i> ${api.apiServiceTitle} </h6></li>`, function () {
+
+            });
+            $.each(api.serviceMethods, function (index1, method) {
+                $(`.zwagger-api-ul`).append(`<li class="nav-item"><a class="nav-link" href="#api-${index}-${index1}">${method.methodTitle == "" ? method.serviceMethod : method.methodTitle}</a></li>`);
+                $(".api-doc").append2(`<div id="api-${index}-${index1}" class="pt-30"></div>`, function () {
+                    let codetemp="{";
+                    $.each(method.serviceMethodParams,function (index2,param){
+                        let paramTemp=param.serviceMethodParamTypeParams;
+                        let codeParamTemp="";
+                        if(paramTemp.length){
+                            $.each(paramTemp,function (index3,param1) {
+                                codeParamTemp+=`"${param1.beanParamName}":""`;
+                                if(index3<paramTemp.length-1){
+                                    codeParamTemp+=",";
+                                }
+                            })
+                            codetemp+=`"${param.serviceMethodParamName}":{${codeParamTemp}}`;
+                        }else{
+                            codetemp+=`"${param.serviceMethodParamName}":""`;
+                            if(index2<method.serviceMethodParams.length-1){
+                                codetemp+=",";
+                            }
+                        }
+                    })
+                    codetemp+="}";
+                    $(`#api-${index}-${index1}`).append(`<div class="doc-title">
+                                <h2>接口名称：${method.methodTitle}</h2>
+                                <p class="mb-10">接口描述：${method.methodDescription}</p>
+                            </div>
+                            <div class="box">
+                                <div class="explanations">
+                                    <div class="single-explanation ${method.requestType}">
+                                        <div class="content">
+                                            <h4>${method.requestType}</h4>
+                                            <span class="fw-bold">http://127.0.0.1:8099/service/hoppinzq?method=${method.serviceMethod}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="page-header">
+                                    <p class="d-inline">请求头信息</p>
+                                </div>
+                                <div class="table-wrapper table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>
+                                                <h6>选项</h6>
+                                            </th>
+                                            <th>
+                                                <h6>说明</h6>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="min-width">
+                                                <p>-i</p>
+                                            </td>
+                                            <td class="min-width">
+                                                <p>显示资源信息，比如说格式、清晰度、大小等</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="min-width">
+                                                <p>-u</p>
+                                            </td>
+                                            <td class="min-width">
+                                                <p>指定下载或查看的url，有时候可以省略-u直接加上url</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="min-width">
+                                                <p>-o</p>
+                                            </td>
+                                            <td class="min-width">
+                                                <p>设置输出文件夹，即保存路径，若不指定，则保存在当前工作目录</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="page-header">
+                                        <p class="d-inline">请求体参数列表</p>
+                                    </div>
+                                    <pre data-simplebar="" class="code-box"><button class="copy-btn">复制</button>
+<code>${JSON.stringify(JSON.parse(codetemp), null, 2)}</code></pre>
+                                </div>
+                            </div>`)
+                })
+            })
+        })
+    }
+
+    function fadeout() {
+        document.querySelector('.preloader').style.opacity = '0';
+        document.querySelector('.preloader').style.display = 'none';
+    }
+</script>
+<script>
+
+    let zNodes = [{
+        "id": "0",
+        "name": "RequestParam类参数"
+    }, {
+        "id": "1",
+        "pId": "0",
+        "name": "String url;//本次请求的url"
+    }, {
+        "id": "2",
+        "pId": "0",
+        "name": "String cacheKey;//本次请求缓存的标志key"
+    }, {
+        "id": "3",
+        "pId": "0",
+        "name": "int cacheTime;//缓存时间"
+    }, {
+        "id": "4",
+        "pId": "0",
+        "name": "String params;//本次请求携带的参数列表"
+    }, {
+        "id": "5",
+        "pId": "0",
+        "name": "String method;//本次请求的目标方法"
+    }, {
+        "id": "6",
+        "pId": "0",
+        "name": "String sign;//本次请求携带的签名"
+    }, {
+        "id": "7",
+        "pId": "0",
+        "name": "String encode;//本次请求携带的加密字符串，也就是参数列表"
+    }, {
+        "id": "8",
+        "pId": "0",
+        "name": "String token;//本次请求携带的token"
+    }, {
+        "id": "9",
+        "pId": "0",
+        "name": "String timestamp;//本次请求携带的时间戳"
+    }, {
+        "id": "10",
+        "pId": "0",
+        "name": "Object result;//本次请求响应的数据"
+    }, {
+        "id": "11",
+        "pId": "0",
+        "name": "ApiRunnable apiRunnable;//本次请求调用方法的反射对象"
+    }, {
+        "id": "11_1",
+        "pId": "11",
+        "name": "String apiName;//本次请求调用api名称"
+    }, {
+        "id": "11_2",
+        "pId": "11",
+        "name": "Method targetMethod;//本次请求的目标方法"
+    }, {
+        "id": "11_3",
+        "pId": "11",
+        "name": "String targetName;//本次请求调用实例名称"
+    }, {
+        "id": "11_4",
+        "pId": "11",
+        "name": "Object target;//本次请求实例对象"
+    }, {
+        "id": "11_5",
+        "pId": "11",
+        "name": "ServiceMethodApiBean serviceMethodApiBean;//本次请求调用方法bean参数"
+    }, {
+        "id": "11_5_1",
+        "pId": "11_5",
+        "name": "ApiMapping.RoleType methodRight;//方法权限"
+    }, {
+        "id": "11_5_1_1",
+        "pId": "11_5_1",
+        "name": "NO_RIGHT//不校验权限"
+    }, {
+        "id": "11_5_1_2",
+        "pId": "11_5_1",
+        "name": "LOGIN//校验登录权限"
+    }, {
+        "id": "11_5_1_3",
+        "pId": "11_5_1",
+        "name": "MEMBER//校验登录权限及会员权限，付费用户"
+    }, {
+        "id": "11_5_1_4",
+        "pId": "11_5_1",
+        "name": "ADMIN//超级管理员"
+    }, {
+        "id": "11_5_2",
+        "pId": "11_5",
+        "name": "ApiMapping.Type requestType;//请求类型"
+    }, {
+        "id": "11_5_2_1",
+        "pId": "11_5_2",
+        "name": "GET,//只允许GET请求"
+    }, {
+        "id": "11_5_2_2",
+        "pId": "11_5_2",
+        "name": "POST,//只允许POST请求"
+    }, {
+        "id": "11_5_2_3",
+        "pId": "11_5_2",
+        "name": "ALL,//所有请求都可"
+    }, {
+        "id": "11_5_3",
+        "pId": "11_5",
+        "name": "boolean methodReturn;//方法是否封装返回值，"
+    }, {
+        "id": "11_5_4",
+        "pId": "11_5",
+        "name": "boolean tokenCheck;//方法是否需要实现自动幂等"
+    }, {
+        "id": "11_5_5",
+        "pId": "11_5",
+        "name": "String methodTitle;//方法标题（ApiMapping注解）"
+    }, {
+        "id": "11_5_6",
+        "pId": "11_5",
+        "name": "String methodDescription;//方法描述（ApiMapping注解）"
+    }, {
+        "id": "11_5_7",
+        "pId": "11_5",
+        "name": "String serviceMethod;//方法标识（ApiMapping注解）"
+    }, {
+        "id": "11_5_8",
+        "pId": "11_5",
+        "name": "List<Map> serviceMethodParams;//方法参数列表"
+    }, {
+        "id": "11_5_9",
+        "pId": "11_5",
+        "name": "Type serviceMethodReturn;//方法返回值类型"
+    }, {
+        "id": "11_5_10",
+        "pId": "11_5",
+        "name": "Object serviceMethodReturnParams;//方法返回值参数列表"
+    }, {
+        "id": "11_5_11",
+        "pId": "11_5",
+        "name": "int cacheTime;//返回值缓存时间"
+    }, {
+        "id": "11_5_12",
+        "pId": "11_5",
+        "name": "boolean isCache;//是否缓存"
+    }, {
+        "id": "11_5_13",
+        "pId": "11_5",
+        "name": "boolean isLock;//是否加同步锁"
+    }, {
+        "id": "11_5_14",
+        "pId": "11_5",
+        "name": "boolean isLimit;//是否限流"
+    }, {
+        "id": "11_5_15",
+        "pId": "11_5",
+        "name": "int limitNumber;//限流次数"
+    }, {
+        "id": "11_5_16",
+        "pId": "11_5",
+        "name": "boolean isTimeout;//是否超时"
+    }, {
+        "id": "11_5_17",
+        "pId": "11_5",
+        "name": "int timeout;//设置的超时时长"
+    }, {
+        "id": "11_5_18",
+        "pId": "11_5",
+        "name": "boolean isLog;//是否返回日志"
+    }, {
+        "id": "12",
+        "pId": "0",
+        "name": "List<FormInfo> formInfoList;//本次请求解析的表单数据（文件上传数据也在该参数内）"
+    }, {
+        "id": "12_1",
+        "pId": "12",
+        "name": "String name;//表单的name属性"
+    }, {
+        "id": "12_2",
+        "pId": "12",
+        "name": "long size;//文件大小（仅上传文件时有值）"
+    }, {
+        "id": "12_3",
+        "pId": "12",
+        "name": "String contentType;//内容类型（仅上传文件时有值）"
+    }, {
+        "id": "12_4",
+        "pId": "12",
+        "name": "String submittedFileName;//上传的文件名（仅上传文件时有值）"
+    }, {
+        "id": "12_5",
+        "pId": "12",
+        "name": "String inputStream;//表单的值或文件流"
+    }, {
+        "id": "13",
+        "pId": "0",
+        "name": "HttpServletRequest request;"
+    }, {
+        "id": "14",
+        "pId": "0",
+        "name": "HttpServletResponse response;"
+    }, {
+        "id": "15",
+        "pId": "0",
+        "name": "RequestInfo log;//本次请求的日志"
+    }, {
+        "id": "15_1",
+        "pId": "15",
+        "name": "String id;//日志ID"
+    }, {
+        "id": "15_2",
+        "pId": "15",
+        "name": "String ip;//请求来源IP"
+    }, {
+        "id": "15_3",
+        "pId": "15",
+        "name": "String url;//请求的url"
+    }, {
+        "id": "15_4",
+        "pId": "15",
+        "name": "String logLevel;//日志级别 INFO 跟 ERROR 报错就是ERROR"
+    }, {
+        "id": "15_5",
+        "pId": "15",
+        "name": "String httpMethod;//请求类型 GET POST"
+    }, {
+        "id": "15_6",
+        "pId": "15",
+        "name": "String classMethod;//请求的类中的哪个方法"
+    }, {
+        "id": "15_7",
+        "pId": "15",
+        "name": "Object requestParams;//传参"
+    }, {
+        "id": "15_8",
+        "pId": "15",
+        "name": "Object result;//返参，报错无"
+    }, {
+        "id": "15_9",
+        "pId": "15",
+        "name": "String createTime;//创建时间"
+    }, {
+        "id": "15_10",
+        "pId": "15",
+        "name": "Long timeCost;//响应时间（只计算请求开始跟结束的时间差，请求结束前会异步入库，不影响响应时间，不考虑这块时间），报错无"
+    }, {
+        "id": "15_11",
+        "pId": "15",
+        "name": "String exception;//报错内容"
+    }, {
+        "id": "16",
+        "pId": "0",
+        "name": "Object user;//本次请求的zauth认证的当前登录人（如果没有就是null）"
+    }, {
+        "id": "16_1",
+        "pId": "16",
+        "name": "long id;"
+    }, {
+        "id": "16_2",
+        "pId": "16",
+        "name": "String username;"
+    }, {
+        "id": "16_3",
+        "pId": "16",
+        "name": "String password;"
+    }, {
+        "id": "16_4",
+        "pId": "16",
+        "name": "String phone;"
+    }, {
+        "id": "16_5",
+        "pId": "16",
+        "name": "String email;"
+    }, {
+        "id": "16_6",
+        "pId": "16",
+        "name": "String description;"
+    }, {
+        "id": "16_7",
+        "pId": "16",
+        "name": "Date create;"
+    }, {
+        "id": "16_8",
+        "pId": "16",
+        "name": "Date update;"
+    }, {
+        "id": "16_9",
+        "pId": "16",
+        "name": "String image;"
+    }, {
+        "id": "16_10",
+        "pId": "16",
+        "name": "int userright;//权限"
+    }, {
+        "id": "16_11",
+        "pId": "16",
+        "name": "int code;//可以是邮箱验证码，也可以是手机验证码，一般是手机验证码"
+    }, {
+        "id": "16_12",
+        "pId": "16",
+        "name": "String token;"
+    }, {
+        "id": "16_13",
+        "pId": "16",
+        "name": "int isRemember;//默认是0，不记住用户名密码"
+    }, {
+        "id": "16_14",
+        "pId": "16",
+        "name": "int state;//登录状态"
+    }, {
+        "id": "16_15",
+        "pId": "16",
+        "name": "String login_type;"
+    }, {
+        "id": "16_16",
+        "pId": "16",
+        "name": "Object extra_message;//额外的信息"
+    },];
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿server:
+  port: 9001
+
+spring:
+  ai:
+    openai:
+      base-url: https://api.uchat.site
+      api-key: sk-
+      chat:
+        completions-path: v1/chat/completions
+        model: gpt-4o-mini
+        temperature: 1
+    mcp:
+      client:
+        name: myclient
+        type: ASYNC
+        toolcallback:
+          enabled: true
+        sse:
+          connections:
+            server1:
+              url: http://localhost:9000
+        stdio:
+          connections:
+            server2:
+              command: java
+              args:
+                - -Dspring.ai.mcp.server.stdio=true
+                - -Dspring.main.web-application-type=none
+                - -Dspring.main.banner-mode=off
+                - -jar
+                - D:/hoppinzq-module-mcp-server-1.0.jar
+        request-timeout: 30000

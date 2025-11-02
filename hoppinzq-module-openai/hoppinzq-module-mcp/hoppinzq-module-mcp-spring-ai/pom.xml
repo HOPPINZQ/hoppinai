@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 该模块是独立的，跟hoppinzq其他项目任何依赖都无关 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.4</version>
+        <relativePath/>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>hoppinzq-module-spring-ai-mcp-server</module>
+        <module>hoppinzq-module-spring-ai-mcp-client</module>
+        <module>hoppinzq-module-spring-ai-mcp-server-sse</module>
+        <module>hoppinzq-module-mcp-trae-stdio</module>
+        <module>hoppinzq-module-spring-ai-mcp-yudao</module>
+        <module>mcp-demo</module>
+        <module>hoppinzq-module-mcp-blog-stdio</module>
+    </modules>
+    <groupId>com.hoppinzq</groupId>
+    <artifactId>hoppinzq-module-mcp-spring-ai</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>hoppinzq-module-mcp-spring-ai</name>
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>17</java.version>
+        <spring-ai.version>1.0.0-M7</spring-ai.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>

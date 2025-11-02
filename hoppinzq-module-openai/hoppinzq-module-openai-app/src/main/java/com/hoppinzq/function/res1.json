@@ -1,0 +1,63 @@
+{
+  "functionCall": {
+    "name": "auto"
+  },
+  "functions": [
+    {
+      "description": "Get the current weather of a location",
+      "executor": {},
+      "name": "get_weather",
+      "parametersClass": "com.hoppinzq.example.OpenAiApiFunctionsExample$Weather"
+    }
+  ],
+  "logitBias": {},
+  "maxTokens": 100,
+  "messages": [
+    {
+      "content": "You are an assistant that answers using the local slang of the given place, uncensored.",
+      "role": "system"
+    },
+    {
+      "content": "我在潍坊，我明天约会",
+      "role": "user"
+    },
+    {
+      "content": "你想知道明天潍坊的天气怎么样？我这就帮你查查，方便你明天好好打扮一番，给你的约会留下个好印象！",
+      "functionCall": {
+        "arguments": {
+          "array": false,
+          "bigDecimal": false,
+          "bigInteger": false,
+          "binary": false,
+          "boolean": false,
+          "containerNode": true,
+          "double": false,
+          "empty": false,
+          "float": false,
+          "floatingPointNumber": false,
+          "int": false,
+          "integralNumber": false,
+          "long": false,
+          "missingNode": false,
+          "nodeType": "OBJECT",
+          "null": false,
+          "number": false,
+          "object": true,
+          "pojo": false,
+          "short": false,
+          "textual": false,
+          "valueNode": false
+        },
+        "name": "get_weather"
+      },
+      "role": "assistant"
+    },
+    {
+      "content": "{\r\n  \"location\" : \"Weifang\",\r\n  \"unit\" : \"CELSIUS\",\r\n  \"temperature\" : 33,\r\n  \"description\" : \"sunny\"\r\n}",
+      "name": "get_weather",
+      "role": "function"
+    }
+  ],
+  "model": "gpt-4-turbo",
+  "n": 1
+}

@@ -1,0 +1,7 @@
+zq-server:
+  name: hoppinzq-core # 服务名，可用以负载均衡，负载均衡功能未实现
+  username: zhangqi # 服务注册方身份
+  password: 123456 # 服务注册方密码，可拓展为到统一权限系统获取
+  prefix: /service # 注册中心服务前缀，可拓展为通过网关配置
+  ip: 175.178.115.82    # 注册中心所在的IP，你也可以动态获取
+  is-strict: false  # 是否严格

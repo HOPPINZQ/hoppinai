@@ -1,0 +1,7 @@
+zq-server:
+  name: hoppinzq-core
+  username: zhangqi
+  password: 123456
+  prefix: /service
+  ip: 127.0.0.1
+  is-strict: false

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hoppinzq</artifactId>
+        <groupId>com.hoppinzq</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>hoppinzq-module-openai</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>hoppinzq-module-openai-model</module>
+        <module>hoppinzq-module-openai-app</module>
+        <module>hoppinzq-module-openai-core</module>
+        <module>hoppinzq-module-mcp</module>
+        <module>hoppinzq-module-langchain</module>
+        <module>hoppinzq-module-a2a</module>
+        <module>hoppinzq-module-anthropic</module>
+        <module>hoppinzq-module-mcp/hoppinzq-module-mcp-solon/hoppinzq-module-mcp-solon-sse</module>
+        <module>hoppinzq-module-mcp/hoppinzq-module-mcp-solon/hoppinzq-module-mcp-solon-client</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hoppinzq</artifactId>
+        <groupId>com.hoppinzq</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hoppinzq</groupId>
+    <artifactId>hoppinzq-client</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hoppinzq</groupId>
+            <artifactId>hoppinzq-common</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--序列化框架-->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.65</version>
+        </dependency>
+        <!--netty依赖-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.0.Final</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.hoppinzq</groupId>-->
+<!--            <artifactId>hoppinzq-gateway</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+    </dependencies>
+</project>

@@ -1,0 +1,10 @@
+server:
+  port: 48000
+
+spring:
+  ai:
+    mcp:
+      server:
+        name: zq-yudao-mcp-sse
+        version: 0.0.2
+        type: ASYNC

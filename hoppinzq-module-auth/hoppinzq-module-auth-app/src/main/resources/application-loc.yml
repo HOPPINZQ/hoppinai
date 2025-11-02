@@ -1,0 +1,58 @@
+zq-server:
+  name: hoppinzq-auth
+  username: zhangqi
+  password: 123456
+  prefix: /service
+  ip: 127.0.0.1
+  center-addr: http://127.0.0.1:8801/service
+  file-addr: http://127.0.0.1:8090/service
+  #   center-addr: http://175.178.115.82:8801/service
+
+
+# gitee 的 开发者key
+# 需要到 https://gitee.com/oauth/applications 去申请
+gitee:
+  cilent_id:
+  client_secret:
+  reurl:
+# weibo的开发者key
+weibo:
+  cilent_id:
+  client_secret:
+  reurl:
+
+github:
+  cilent_id:
+  client_secret:
+  reurl:
+# sms的参数
+# sms的参数
+sms:
+  # 腾讯云账户密钥对
+  secretId:
+  secretKey:
+  # 指定请求方法
+  reqMethod: POST
+  # 指定超时时间
+  connTimeout: 60
+  # 指定域名
+  endpoint: sms.tencentcloudapi.com
+  # 签名
+  signMethod: HmacSHA256
+  # 地域信息
+  region: ap-guangzhou
+  # 短信签名内容
+  signName: hoppinzq个人网站
+  # 短信应用ID
+  sdkAppId:
+  # 用户的 session 内容,可以携带用户的sessionID等上下文信息
+  sessionContext: session
+  # 短信注册模板
+  registerTemplateId:
+  # 短信登录模板
+  loginTemplateId:
+
+auth:
+  isAuth: true
+  ssoUrl: https://hoppinzq.com
+  ssoAdminUrl: https://hoppinzq.com
